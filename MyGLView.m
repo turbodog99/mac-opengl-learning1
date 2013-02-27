@@ -14,9 +14,9 @@
 @implementation MyGLView
 -(void)awakeFromNib
 {
-	readyToDraw = NO;
-	angle = 0;
-	piover180 = M_PI / 180.0;
+    readyToDraw = NO;
+    angle = 0;
+    piover180 = M_PI / 180.0;
     player = [[Player alloc] init];
     keyState = [[KeyboardState alloc] init];
     [[self window] setAcceptsMouseMovedEvents: YES];
