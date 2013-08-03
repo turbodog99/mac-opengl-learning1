@@ -40,7 +40,7 @@
     xpos -= (float)sin(yrot*piover180) * distance;			// Move On The X-Plane Based On Player Direction
 	zpos -= (float)cos(yrot*piover180) * distance;			// Move On The Z-Plane Based On Player Direction
     
-    NSLog(@"Moved player to position (x,z): (%f, %f)\n", xpos, zpos);
+//    NSLog(@"Moved player to position (x,z): (%f, %f)\n", xpos, zpos);
 }
 
 // Moves the player backward the given distance.
@@ -48,7 +48,7 @@
     xpos += (float)sin(yrot*piover180) * distance;			// Move On The X-Plane Based On Player Direction
 	zpos += (float)cos(yrot*piover180) * distance;			// Move On The Z-Plane Based On Player Direction
     
-    NSLog(@"Moved player to position (x,z): (%f, %f)\n", xpos, zpos);
+//    NSLog(@"Moved player to position (x,z): (%f, %f)\n", xpos, zpos);
 }
 
 - (void) rotateLeftDegrees: (float) degrees {

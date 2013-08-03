@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>
-#import <OpenGL/OpenGL.h>
+#import <OpenGL/gl3.h>
 
 #include <math.h>
 

@@ -10,6 +10,7 @@
 #import "HIToolbox/Events.h"
 
 #import "MyGLView.h"
+#import "Shader.h"
 
 @implementation MyGLView
 -(void)awakeFromNib
@@ -101,6 +102,27 @@ void DrawPyramid (void)
 
 - (void)prepareOpenGL
 {
+    
+	NSOpenGLPixelFormatAttribute attr[] = {
+        NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion3_2Core, // Needed if using opengl 3.2 you can comment this line out to use the old version.
+        NSOpenGLPFAColorSize,     24,
+        NSOpenGLPFAAlphaSize,     8,
+        NSOpenGLPFAAccelerated,
+        NSOpenGLPFADoubleBuffer,
+        0
+    };
+    
+    NSOpenGLPixelFormat *pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes:attr];
+    [self setPixelFormat: pixelFormat];
+    NSOpenGLContext *openGLContext = [[NSOpenGLContext alloc] initWithFormat:pixelFormat shareContext:nil];
+    [self setOpenGLContext: openGLContext];
+    [openGLContext makeCurrentContext];
+    
+    if (openGLContext == nil)
+        NSLog(@"Failed to create GL context.");
+    
+    printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
+    
     // Synchronize buffer swaps with vertical refresh rate
     GLint swapInt = 1;
     [[self openGLContext] setValues:&swapInt forParameter:NSOpenGLCPSwapInterval]; 
@@ -115,9 +137,17 @@ void DrawPyramid (void)
     CGLContextObj cglContext = [[self openGLContext] CGLContextObj];
     CGLPixelFormatObj cglPixelFormat = [[self pixelFormat] CGLPixelFormatObj];
     CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
-	
+    
+    // NSOpenGLPixelFormat *pix = [[NSOpenGLPixelFormat alloc] initWithAttributes:attr];
+    
     glEnable (GL_DEPTH_TEST);
     
+    
+    Shader *myShader = [[Shader alloc] initWithType: GL_VERTEX_SHADER];
+    [myShader loadFromResourceWithName: @"SimpleShader"];
+    
+    NSLog(@"Shader text: %@", [myShader shaderText]);
+
     // Activate the display link
     CVDisplayLinkStart(displayLink);
 }
@@ -312,10 +342,10 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 - (void) mouseMoved:(NSEvent *)theEvent {
     NSPoint locationInWindow = [theEvent locationInWindow];
     
-    NSLog(@"Mouse Moved. Location in window: (%f, %f)\n",
-          locationInWindow.x, locationInWindow.y);
+//    NSLog(@"Mouse Moved. Location in window: (%f, %f)\n",
+//          locationInWindow.x, locationInWindow.y);
     
-    NSLog(@"Mouse deltas: (%f, %f)\n", [theEvent deltaX], [theEvent deltaY]);
+//    NSLog(@"Mouse deltas: (%f, %f)\n", [theEvent deltaX], [theEvent deltaY]);
     
     // Set player movement and rotation.  The deltas can be negative, and the player movement
     // functions don't mind, and so this works.

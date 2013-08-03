@@ -49,9 +49,9 @@
         fscanf(file, "%f %f %f %f %f %f %f %f %f %f %f %f \n", &inFloats[0], &inFloats[1], &inFloats[2], &inFloats[3],
                &inFloats[4], &inFloats[5], &inFloats[6], &inFloats[7], &inFloats[8], &inFloats[9], &inFloats[10],
                &inFloats[11]);
-        NSLog(@"Read floats: %f %f %f %f %f %f %f %f %f %f %f %f\n",  inFloats[0], inFloats[1], inFloats[2], inFloats[3],
-              inFloats[4], inFloats[5], inFloats[6], inFloats[7], inFloats[8], inFloats[9], inFloats[10],
-              inFloats[11]);
+//        NSLog(@"Read floats: %f %f %f %f %f %f %f %f %f %f %f %f\n",  inFloats[0], inFloats[1], inFloats[2], inFloats[3],
+//              inFloats[4], inFloats[5], inFloats[6], inFloats[7], inFloats[8], inFloats[9], inFloats[10],
+//              inFloats[11]);
         Quad* newQuad = [[Quad alloc] init];
         [newQuad setVertices:inFloats];
         [quads addObject: newQuad];
