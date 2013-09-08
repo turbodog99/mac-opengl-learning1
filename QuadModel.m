@@ -67,6 +67,7 @@
 - (void) dealloc
 {
     [quads release];
+    [super dealloc];
 }
 
 @synthesize quads;

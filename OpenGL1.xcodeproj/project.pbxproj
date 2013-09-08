@@ -15,6 +15,7 @@
 		B002021311B2FCAA00C8046F /* MyGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B002021211B2FCAA00C8046F /* MyGLView.m */; };
 		B036EEDA15C39A140090B01B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B036EED915C39A140090B01B /* OpenGL.framework */; };
 		B036EEDC15C39A350090B01B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B036EEDB15C39A350090B01B /* CoreVideo.framework */; };
+		B0A9088917CA84AC008EE75F /* matrix_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = B0A9088817CA84AC008EE75F /* matrix_functions.c */; };
 		B0BFDE1B13934E9D00F5DF88 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDE1A13934E9D00F5DF88 /* Player.m */; };
 		B0BFDE1E1393EB3B00F5DF88 /* KeyboardState.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDE1D1393EB3B00F5DF88 /* KeyboardState.m */; };
 		B0BFDE2E1393F82500F5DF88 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BFDE2D1393F82500F5DF88 /* Carbon.framework */; };
@@ -42,6 +43,8 @@
 		B002021211B2FCAA00C8046F /* MyGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGLView.m; sourceTree = "<group>"; };
 		B036EED915C39A140090B01B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = ../../../../../System/Library/Frameworks/OpenGL.framework; sourceTree = "<group>"; };
 		B036EEDB15C39A350090B01B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = ../../../../../System/Library/Frameworks/CoreVideo.framework; sourceTree = "<group>"; };
+		B0A9088817CA84AC008EE75F /* matrix_functions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix_functions.c; sourceTree = "<group>"; };
+		B0A9088A17CA84BE008EE75F /* matrix_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix_functions.h; sourceTree = "<group>"; };
 		B0BFDE1913934E9D00F5DF88 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		B0BFDE1A13934E9D00F5DF88 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		B0BFDE1C1393EB3B00F5DF88 /* KeyboardState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardState.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 			children = (
 				B002014A11B2B17900C8046F /* MyGLView.h */,
 				B002021211B2FCAA00C8046F /* MyGLView.m */,
+				B0A9088817CA84AC008EE75F /* matrix_functions.c */,
+				B0A9088A17CA84BE008EE75F /* matrix_functions.h */,
 				256AC3D80F4B6AC300CF3369 /* OpenGL1AppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* OpenGL1AppDelegate.m */,
 				B0BFDE1913934E9D00F5DF88 /* Player.h */,
@@ -240,6 +245,7 @@
 				B0EDD0AE141A6CE700ADC83A /* Quad.m in Sources */,
 				B0EDD0B4141BD9E100ADC83A /* QuadModel.m in Sources */,
 				B0F49ECD17AC9C2900C54E15 /* Shader.m in Sources */,
+				B0A9088917CA84AC008EE75F /* matrix_functions.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

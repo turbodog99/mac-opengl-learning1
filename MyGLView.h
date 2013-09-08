@@ -16,6 +16,12 @@
 #import "KeyboardState.h"
 #import "QuadModel.h"
 
+// GL Objects
+GLuint programPipeline;
+
+GLfloat projMatrix[16];
+GLfloat viewMatrix[16];
+
 @interface MyGLView : NSOpenGLView
 {
     CVDisplayLinkRef displayLink; //display link for managing rendering thread
@@ -39,6 +45,4 @@ static CVReturn MyDisplayLinkCallback (
 								CVOptionFlags *flagsOut,
 								void *displayLinkContext
 								);
-void DrawTriangle (void);
-
 @end

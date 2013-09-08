@@ -1,13 +1,14 @@
 #version 150
-in vec4  vPosition;
-in vec4  vColor;
 
-out vec4  color;
+uniform mat4 viewMatrix, projMatrix;
 
-uniform mat4  ModelViewProjectionMatrix;
+in vec4 position;
+in vec3 color;
+
+out vec3  Color;
 
 void main()
 {
-    color = vColor;
-    gl_Position = ModelViewProjectionMatrix * vPosition;
+    Color = color;
+    gl_Position = projMatrix * viewMatrix * position;
 }

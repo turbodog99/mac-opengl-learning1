@@ -12,10 +12,16 @@
 @interface Shader : NSObject
 - (id) initWithType: (GLenum) shaderType;
 - (void) loadFromResourceWithName: (NSString *) name;
-- (void) loadFromFileWithName: (NSString *) filename;
+- (void) loadFromURL: (NSURL *) url;
+- (NSString *) stringForShaderType: (GLenum) shaderType;
+- (NSString *) fileExtension;
+- (NSString *) shaderTypeString;
+- (void) setFileExtension: (NSString *) extension;
+
 
 @property GLenum type;
 @property GLuint glShader;
 @property GLint compileStatus;
 @property (nonatomic, retain) NSString *shaderText;
+@property (nonatomic, retain) NSDictionary *shaderFileExtensions;
 @end
