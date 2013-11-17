@@ -115,20 +115,11 @@ void logOpenGlError(NSString* whatYouAreDoing) {
         case GL_INVALID_OPERATION:
             NSLog(@"Invalid operation returned while %@", whatYouAreDoing);
             break;
-        case GL_STACK_OVERFLOW:
-            NSLog(@"Stack overflow returned while %@", whatYouAreDoing);
-            break;
-        case GL_STACK_UNDERFLOW:
-            NSLog(@"Stack underflow returned while %@", whatYouAreDoing);
-            break;
         case GL_OUT_OF_MEMORY:
             NSLog(@"Out of memory returned while %@", whatYouAreDoing);
             break;
         case GL_INVALID_FRAMEBUFFER_OPERATION:
             NSLog(@"Invalid framebuffer operation returned while %@", whatYouAreDoing);
-            break;
-        case GL_TABLE_TOO_LARGE:
-            NSLog(@"Table too large returned while %@", whatYouAreDoing);
             break;
         case GL_NO_ERROR:
             NSLog(@"No error returned while %@", whatYouAreDoing);
